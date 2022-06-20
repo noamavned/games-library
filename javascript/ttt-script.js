@@ -8,42 +8,6 @@ function load() {
     resContainer.style.display = "none";
 }
 
-function checkWin() {
-    for (var i = 0; i < 3; i++) {
-        if (game[i][0] == game[i][1] && game[i][0] == game[i][2] && game[i][0] != turn) {
-            return turn;
-        }
-    }
-    for (var i = 0; i < 3; i++) {
-        if (game[0][i] == game[1][i] && game[0][i] == game[2][i] && game[0][i] != turn) {
-            return turn;
-        }
-    }
-    if (game[0][0] == game[1][1] && game[0][0] == game[2][2] && game[0][0] != turn) {
-        return turn;
-    }
-    if (game[0][2] == game[1][1] && game[0][2] == game[2][0] && game[0][2] != turn) {
-        return turn;
-    }
-    if (win === false) {
-        if (checkDraw() === true) {
-            return "draw";
-        }
-    }
-    return false;
-}
-
-function checkDraw() {
-    game.forEach(i => {
-        i.forEach(j => {
-            if (i === "") {
-                return false;
-            }
-        });
-    });
-    return true;
-}
-
 function startButton() {
     var resContainer = document.getElementById("res-container");
     var gameContainer = document.getElementById("game-container");
@@ -53,9 +17,47 @@ function startButton() {
     startButton.style.display = "none";
 }
 
-function slotClick(slot) {
+function checkDraw() {
+    for (let index = 0; index < game.length; index++) {
+        for (let index2 = 0; index2 < game[index].length; index2++) {
+            if (game[index][index2] === "") {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+function checkWin() {
+    for (var i = 0; i < 3; i++) {
+        if (game[i][0] == game[i][1] && game[i][0] == game[i][2] && game[i][0] == turn) {
+            return turn;
+        }
+    }
+    for (var i = 0; i < 3; i++) {
+        if (game[0][i] == game[1][i] && game[0][i] == game[2][i] && game[0][i] == turn) {
+            return turn;
+        }
+    }
+    if (game[0][0] == game[1][1] && game[0][0] == game[2][2] && game[0][0] == turn) {
+        return turn;
+    }
+    else if (game[0][2] == game[1][1] && game[0][2] == game[2][0] && game[0][2] == turn) {
+        return turn;
+    }
+    else {
+        if (checkDraw() === true) {
+            return "draw";
+        }
+    }
+    return "false";
+}
+
+function slotClick(slot , tslot) {
     var slot = document.getElementById("slot-"+slot);
+    slot.classList.remove("box-empty");
     var slotValue = slot.innerHTML;
+    game[tslot[0]][tslot[1]] = turn;
     if (slotValue == "") {
         slot.innerHTML = turn;
     }

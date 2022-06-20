@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="/css/RPS-style.css">
+    <script src="/javascript/RPS-script.js"></script>
+</head>
+<body onload="load()">
+    <div class="start-container">
+        <button class="btn btn-start" id="btn-start" onclick="startGame()">▷</button>
+    </div>
+    <div class="choice-container" id="choice-container">
+        <a class="choice" id="rock" onclick="choice('rock')">
+            <img src="/images/rps/rock.svg" class="choice-img">
+        </a>
+        <a class="choice" id="paper" onclick="choice('paper')">
+            <img src="/images/rps/paper.svg" class="choice-img">
+        </a>
+        <a class="choice" id="scissors" onclick="choice('scissors')">
+            <img src="/images/rps/scissors.svg" class="choice-img">
+        </a>
+    </div>
+    <div class="res-container" id="res-container">
+        <div class="img-con">
+            <img src="/images/rps/paper.svg" alt="" class="botChoice verse" id="botChoice">
+            <h1 class="title">VS.</h1>
+            <img src="/images/rps/rock.svg" alt="" class="playerChoice verse" id="playerChoice">
+        </div>
+        <img src="/images/rps/rock.svg" alt="" class="winner verse" id="winnerImg">
+        <h2 class="subTitle" id="winner">hi</h2>
+        <button class="btn btn-end" id="btn-end" onclick="restart()">↻</button>
+    </div>
+</body>
+</html>

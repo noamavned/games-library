@@ -1,0 +1,149 @@
+* {
+    font-family: "Helvetica", "Arial", sans-serif;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+body {
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url("/images/background-image.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 500px;
+    margin-top: 2%;
+}
+
+.que {
+    color: #3a16b0;
+    border: 2px solid #3a16b0;
+    border-radius: 10px;
+    padding: 1vh 1vh;
+    background: transparent;
+    width: 45%;
+    height: 2vh;
+    min-height: 20px;
+}
+
+.que:active {
+    box-shadow: 2px 2px 15px #3a16b0 inset;
+}
+
+.questionAnswer {
+    width: 99%;
+    font-size: 5vh;
+    color: #900505;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20px;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(2px, 2px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-2px, -3px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-4px, -1px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(4px, 3px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(0px, -2px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-2px, 1px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-4px, 0px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(4px, 2px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-2px, -2px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(2px, 3px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0px, -3px) rotate(-1deg);
+    }
+}
+
+.btnAsk {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+    padding: 1% 3%;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #3106be;
+    background: transparent;
+    cursor: pointer;
+    border: 2px solid #3106be;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #3106be;
+    width: 5vw;
+    height: 1.75vh;
+    font-weight: 1000;
+    font-size: 3vh;
+    min-height: 20px;
+}
+
+.btnAsk:hover {
+    color: white;
+    background-color: #3106be;
+    transition: background-color 1000ms ease-out;
+}
+
+.btnAsk:active {
+    transition: all .2s ease-in-out;
+    transform: scale(0.999);
+}
+
+.shake {
+    animation: shake 0.5s infinite;
+}
+
+.eBallImg {
+    width: 45vh;
+    min-height: 50px;
+    height: auto;
+    border-radius: 100%;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+}
+
+/*# sourceMappingURL=style.css.map */

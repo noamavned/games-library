@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="../css/ttt-style.css">
+    <script src="../javascript/ttt-script.js"></script>
+</head>
+<body onload="load()">
+    <div class="start-container">
+        <button class="btn btn-start" id="btn-start" onclick="startButton()">▷</button>
+    </div>
+    <div class="game-container" id="game-container">
+        <div class="row">
+            <div class="box horLine box-empty" style="border-top-left-radius: 16px;" id="slot-0" onclick="slotClick(0)"></div>
+            <div class="verLine"></div>
+            <div class="box horLine box-empty" id="slot-1" onclick="slotClick(1)"></div>
+            <div class="verLine"></div>
+            <div class="box horLine box-empty" style="border-top-right-radius: 16px;" id="slot-2" onclick="slotClick(2)"></div>
+        </div>
+        <div class="row">
+            <div class="box horLine box-empty" id="slot-3" onclick="slotClick(3)"></div>
+            <div class="verLine"></div>
+            <div class="box horLine box-empty" id="slot-4" onclick="slotClick(4)"></div>
+            <div class="verLine"></div>
+            <div class="box horLine box-empty" id="slot-5" onclick="slotClick(5)"></div>
+        </div>
+        <div class="row">
+            <div class="box box-empty" style="border-bottom-left-radius: 16px;" id="slot-6" onclick="slotClick(6)"></div>
+            <div class="verLine"></div>
+            <div class="box box-empty" id="slot-7" onclick="slotClick(7)"></div>
+            <div class="verLine"></div>
+            <div class="box box-empty" style="border-bottom-right-radius: 16px;" id="slot-8" onclick="slotClick(8)"></div>
+        </div>
+    </div>
+    <div class="res-container" id="res-container">
+        <button class="btn btn-end" id="btn-end" onclick="restart()">↻</button>
+    </div>
+</body>
+</html>

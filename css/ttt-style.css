@@ -1,9 +1,6 @@
 * {
     -webkit-user-drag: none;
     user-select: none;
-    font-family: 'Oswald', sans-serif;
-    font-size: 50px;
-    font-weight: 700;
 }
 
 body {
@@ -46,7 +43,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
 }
 
 .box-empty {

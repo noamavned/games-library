@@ -18,9 +18,10 @@ function startButton() {
 }
 
 function checkDraw() {
+    console.log(game);
     for (let index = 0; index < game.length; index++) {
         for (let index2 = 0; index2 < game[index].length; index2++) {
-            if (game[index][index2] === "") {
+            if (game[index][index2] == "") {
                 return false;
             }
         }
@@ -31,24 +32,26 @@ function checkDraw() {
 function checkWin() {
     for (var i = 0; i < 3; i++) {
         if (game[i][0] == game[i][1] && game[i][0] == game[i][2] && game[i][0] == turn) {
+            console.log(i+", "+0+" "+1+" "+2);
             return turn;
         }
     }
     for (var i = 0; i < 3; i++) {
         if (game[0][i] == game[1][i] && game[0][i] == game[2][i] && game[0][i] == turn) {
+            console.log(i+", "+"i0"+" "+"i1"+" "+"i2");
             return turn;
         }
     }
     if (game[0][0] == game[1][1] && game[0][0] == game[2][2] && game[0][0] == turn) {
+        console.log(00+" "+11+" "+22);
         return turn;
     }
-    else if (game[0][2] == game[1][1] && game[0][2] == game[2][0] && game[0][2] == turn) {
+    if (game[0][2] == game[1][1] && game[0][2] == game[2][0] && game[0][2] == turn) {
+        console.log("02"+" "+11+" "+20);
         return turn;
     }
-    else {
-        if (checkDraw() === true) {
-            return "draw";
-        }
+    if (checkDraw() === true) {
+        return "draw";
     }
     return "false";
 }

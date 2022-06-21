@@ -4,17 +4,45 @@ var game = [["", "", ""], ["", "", ""], ["", "", ""]];
 function load() {
     var resContainer = document.getElementById("res-container");
     var gameContainer = document.getElementById("game-container");
+    var startContainer = document.getElementById("start-container");
+    startContainer.style.display = "flex";
     gameContainer.style.display = "none";
     resContainer.style.display = "none";
+    return;
 }
 
 function startButton() {
     var resContainer = document.getElementById("res-container");
     var gameContainer = document.getElementById("game-container");
-    var startButton = document.getElementById("btn-start");
+    var startContainer = document.getElementById("start-container");
     gameContainer.style.display = "flex";
     resContainer.style.display = "none";
-    startButton.style.display = "none";
+    startContainer.style.display = "none";
+}
+
+function reset() {
+    load();
+    game = [["", "", ""], ["", "", ""], ["", "", ""]];
+    turn = "X";
+    var elements = document.getElementsByClassName("box");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].innerHTML = "";
+        elements[i].classList.add("box-empty");
+    }
+}
+
+function end(winner) {
+    var resContainer = document.getElementById("res-container");
+    var gameContainer = document.getElementById("game-container");
+    var winnerText = document.getElementById("winner");
+    resContainer.style.display = "flex";
+    gameContainer.style.display = "none";
+    if (winner === "draw") {
+        winnerText.innerHTML = "Draw!";
+    }
+    else {
+        winnerText.innerHTML = winner + " wins!";
+    }
 }
 
 function checkDraw() {
@@ -60,19 +88,19 @@ function slotClick(slot , tslot) {
     var slot = document.getElementById("slot-"+slot);
     slot.classList.remove("box-empty");
     var slotValue = slot.innerHTML;
-    game[tslot[0]][tslot[1]] = turn;
     if (slotValue == "") {
         slot.innerHTML = turn;
+        game[tslot[0]][tslot[1]] = turn;
     }
     var win = checkWin();
     if (win === "X") {
-        alert("X wins!");
+        end("X");
     }
     else if (win === "O") {
-        alert("O wins!");
+        end("O");
     }
     else if (win === "draw") {
-        alert("Draw!");
+        end("draw");
     }
     else {
         if (turn === "X") {

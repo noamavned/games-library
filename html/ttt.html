@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
 <body onload="load()">
-    <div class="start-container">
+    <div class="start-container" id="start-container">
         <button class="btn btn-start" id="btn-start" onclick="startButton()">▷</button>
     </div>
     <div class="game-container" id="game-container">
@@ -39,7 +39,8 @@
         </div>
     </div>
     <div class="res-container" id="res-container">
-        <button class="btn btn-end" id="btn-end" onclick="restart()">↻</button>
+        <h1 class="title" id="winner"></h1>
+        <button class="btn btn-end" id="btn-end" onclick="reset()">↻</button>
     </div>
 </body>
 </html>

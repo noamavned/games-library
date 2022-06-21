@@ -71,7 +71,6 @@ body {
 
 .btn-end {
     background-color: rgb(159, 0, 0);
-    display: none;
 }
 
 .verLine {
@@ -82,4 +81,18 @@ body {
 
 .horLine {
     border-bottom: 2.5px solid rgba(0, 0, 0, 0.833);
+}
+
+.title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(81, 81, 81);
+}
+
+.res-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

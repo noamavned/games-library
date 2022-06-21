@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tests</title>
+    <link rel="stylesheet" href="../css/ssa-style.css">
+    <script src="../javascript/ssa-script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body onload="load()">
+    <div class="container" id="container">
+        <h1 id="score" class="title">0</h1>
+        <div class="circle">
+            <div class="qu red" id="cover1" onclick="pressed('cover1')"></div>
+            <div class="qu green" id="cover2" onclick="pressed('cover2')"></div>
+            <div class="qu yellow" id="cover3" onclick="pressed('cover3')"></div>
+            <div class="qu orange" id="cover4" onclick="pressed('cover4')"></div>
+        </div>
+    </div>
+    <button class="start-btn" id="start-btn" onclick="startGame()">▶</button>
+    <button class="end-btn" id="end-btn" onclick="restartGame()">↻</button>
+</body>
+</html>

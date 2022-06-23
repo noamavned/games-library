@@ -1,0 +1,18 @@
+* {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url("/images/background-image.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
